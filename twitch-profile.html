@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Twitch Profile Panels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@1.1.2/dist/tailwind.min.css" rel="stylesheet" />
+  <style>
+    .panel-item p,.panel-item h1,.panel-item h2,.panel-item h3,.panel-item h4,.panel-item h5,.panel-item h6,.panel-item hr { margin-bottom: 1rem; }
+    .panel-item hr { border-color: currentColor; opacity: .25; }
+    .panel-item ul,.panel-item ol { margin-bottom: 1rem; margin-left: 1rem; list-style: disc outside none; }
+    .panel-item ol { list-style-type: decimal; }
+    .panel-item ul ul,.panel-item ul ol,.panel-item ol ol,.panel-item ol ul { margin-bottom: 0; }
+    .panel-item a { color: #63B3ED; }
+    .panel-item a:hover,.panel-item a:focus { opacity: .5; text-decoration: underline; }
+  </style>
+
+</head>
+<body class="bg-black text-gray-600 text-sm">
+
+  <header class="intro py-6 px-4">
+    <div class="mx-auto max-w-5xl relative">
+      <h1 class="mb-4 text-4xl text-purple-700 uppercase flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" class="text-purple-500">
+          <title>Twitch</title>
+          <path class="fill-current" d="M494,372 L492,376 L492,395 L498,395 L498,398 L502,398 L505,395 L510,395 L517,388 L517,372 L494,372 Z M515,387 L511,391 L505,391 L501,394 L501,391 L496,391 L496,374 L515,374 L515,387 Z M510,379 L510,386 L508,386 L508,379 L510,379 Z M504,379 L504,386 L502,386 L502,379 L504,379 Z" transform="translate(-490 -370)"></path>
+        </svg>
+        <b class="mx-2 text-purple-500">Twitch</b> Profile Panels
+      </h1>
+      <p class="mb-4">Dear, Twitch you are free to use this... please use this... or hire me to make your profile pages better!</p>
+      <ul class="mb-4 ml-4 list-disc">
+        <li>Pure <abbr title="Cascading Style Sheet">CSS</abbr>, not dependent on <abbr title="JavaScript">JS</abbr></li>
+        <li>Responsive from/to ANY device width</li>
+        <li>Consistent, automatic row height</li>
+        <li>Every field is optional</li>
+        <li>None of that masonry absolute positioning garbage</li>
+      </ul>
+      <small class="text-xs font-bold text-gray-700">This prototype was built using <a href="https://tailwindcss.com/" class="text-gray-600 hover:text-purple-500 focus:text-purple-500">Tailwind CSS</a> and <a href="https://vuejs.org/" class="text-gray-600 hover:text-purple-500 focus:text-purple-500">Vue.js</a> for the sake of quickness and simplicity</small>
+      <div class="ml-auto mt-4 w-6 h-6 md:w-8 md:h-8 md:absolute bottom-0 right-0">
+        <a href="#" class="text-gray-700 hover:text-white focus:text-white">
+          <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+            <title>GitHub</title>
+            <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mx-auto py-16 pb-8 bg-gray-900">
+    <div class="ui-panels panel-container flex flex-wrap justify-center">
+      <div v-for="(value, index) in panels" class="panel-item mx-4 mb-8 p-4 pb-px w-full max-w-xs bg-gray-800 rounded-sm shadow-xl">
+        <div v-if="value.heading != ''" v-html="value.heading" class="panel-heading text-2xl font-bold"></div>
+        <div v-if="value.image != ''" class="panel-image opacity-50"><p><a href="#"><img :src="'holder.js/'+ value.image +'?text='+ value.image_text +'&outline=yes&auto=yes&bg=#000&fg=#FFF'" :alt="value.image_text" /></a></p></div>
+        <div v-if="value.body != ''" v-html="value.body" class="panel-body"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="py-8 px-4">
+    <p class="foot-info font-bold text-center text-grey text-xs flex flex-wrap items-center justify-center">Crafted with <svg xmlns="http://www.w3.org/2000/svg" class="mx-2 text-red-600" width="16" height="16" viewBox="0 0 16 16" role="img" aria-labelledby="foot-love"><title id="foot-love">Love</title><polygon class="fill-current" fill-rule="evenodd" points="8 6 11 3 15 7 8 14 1 7 5 3"/></svg> by <a href="http://craigerskine.com/" class="mx-2 text-gray-500 hover:text-purple-500 focus:text-purple-500">Craig Erskine</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/holderjs/holder.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    // data
+    var builder = new Vue({
+      el: '.ui-panels',
+      data: {
+        panels: [
+          { heading: '<h2>Heading</h2>', image: '320x160', image_text: 'Image', body: '<p>Body...</p><hr /><ul><li><a href="#">Some Link</a></li><li>Some list item</li></ul>' },
+          { heading: '<h3>Heading only...</h3>', image: '', image_text: '', body: '' },
+          { heading: '', image: '', image_text: '', body: '<p>Body only...</p>' },
+          { heading: '<h3>Heading...</h3>', image: '320x320', image_text: 'Image...', body: '' },
+          { heading: '<h3>Heading...</h3>', image: '', image_text: '', body: 'Body...' },
+          { heading: '', image: '320x50', image_text: 'Image...', body: '<p>Body...</p>' },
+          { heading: '', image: '320x160', image_text: 'Image only...', body: '' }
+        ],
+      }
+    });
+  </script>
+
+</body>
+</html>
