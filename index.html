@@ -8,6 +8,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@1.1.2/dist/tailwind.min.css" rel="stylesheet" />
   <style>
+    .ui-panels { background: rgba(0,0,0,0.25); animation: resize 5s 3s infinite alternate; }
     .panel-item p,.panel-item h1,.panel-item h2,.panel-item h3,.panel-item h4,.panel-item h5,.panel-item h6,.panel-item hr { margin-bottom: 1rem; }
     .panel-item hr { border-color: currentColor; opacity: .25; }
     .panel-item ul,.panel-item ol { margin-bottom: 1rem; margin-left: 1rem; list-style: disc outside none; }
@@ -15,6 +16,15 @@
     .panel-item ul ul,.panel-item ul ol,.panel-item ol ol,.panel-item ol ul { margin-bottom: 0; }
     .panel-item a { color: #63B3ED; }
     .panel-item a:hover,.panel-item a:focus { opacity: .5; text-decoration: underline; }
+
+    @keyframes resize {
+      0% {
+        width: 100%;
+      }
+      100% {
+        width: 360px;
+      }
+    }
   </style>
 
 </head>
@@ -49,8 +59,8 @@
     </div>
   </header>
 
-  <main class="mx-auto py-16 pb-8 bg-gray-900">
-    <div class="ui-panels panel-container flex flex-wrap justify-center">
+  <main class="mx-auto bg-gray-900">
+    <div class="ui-panels panel-container mx-auto py-16 pb-8 flex flex-wrap justify-center">
       <div v-for="(value, index) in panels" class="panel-item mx-4 mb-8 p-4 pb-px w-full max-w-xs bg-gray-800 rounded-sm shadow-xl">
         <div v-if="value.heading != ''" v-html="value.heading" class="panel-heading text-2xl font-bold"></div>
         <div v-if="value.image != ''" class="panel-image opacity-50"><p><a href="#"><img :src="'holder.js/'+ value.image +'?text='+ value.image_text +'&outline=yes&auto=yes&bg=#000&fg=#FFF'" :alt="value.image_text" /></a></p></div>
