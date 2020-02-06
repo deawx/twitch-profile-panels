@@ -10,6 +10,7 @@
   <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" rel="stylesheet" />
 
   <style>
+    abbr[title] { border-bottom: 1px dotted currentColor; text-decoration: none; }
     .ui-panels { background: rgba(0,0,0,0.25); transition: width 1s; }
     .panel-item p,.panel-item h1,.panel-item h2,.panel-item h3,.panel-item h4,.panel-item h5,.panel-item h6,.panel-item hr { margin-bottom: 1rem; }
     .panel-item hr { border-color: currentColor; opacity: .25; }
@@ -23,7 +24,7 @@
 </head>
 <body class="bg-black text-gray-600 text-sm">
 
-  <header class="intro py-6 px-4">
+  <header class="intro py-6 px-4 text-base">
     <div class="mx-auto max-w-5xl relative">
       <h1 class="mb-4 text-4xl text-purple-700 uppercase flex items-center">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" role="img" class="text-purple-500">
@@ -54,13 +55,19 @@
 
   <main class="mx-auto bg-gray-900">
     <ul class="nav-devices p-4 text-center flex flex-wrap items-center justify-center">
-      <li class="mx-3"><a href="#" class="bg-purple-600 text-white border border-transparent py-1 px-2 block rounded" data-width="100%"><i class="fa fa-fw fa-2x fa-arrows-alt-h opacity-50"></i> <b class="block font-normal">full</b></a></li>
-      <li class="mx-3"><a href="#" class="border border-transparent py-1 px-2 block rounded" data-width="1200px"><i class="fa fa-fw fa-2x fa-desktop opacity-50"></i> <b class="block font-normal">xl</b></a></li>
-      <li class="mx-3"><a href="#" class="border border-transparent py-1 px-2 block rounded" data-width="992px"><i class="fa fa-fw fa-2x fa-laptop opacity-50"></i> <b class="block font-normal">lg</b></a></li>
-      <li class="mx-3"><a href="#" class="border border-transparent py-1 px-2 block rounded" data-width="768px"><i class="fa fa-fw fa-2x fa-tablet opacity-50"></i> <b class="block font-normal">md</b></a></li>
-      <li class="mx-3"><a href="#" class="border border-transparent py-1 px-2 block rounded" data-width="480px"><i class="fa fa-fw fa-2x fa-mobile opacity-50"></i> <b class="block font-normal">sm</b></a></li>
+      <li class="mx-3"><a href="#" class="bg-purple-600 text-white border border-transparent py-1 px-2 hover:text-white focus:text-white block rounded" data-width="100%"><i class="fa fa-fw fa-2x fa-arrows-alt-h opacity-50"></i> <b class="block font-normal">full</b></a></li>
+      <li class="mx-3"><a href="#" class="border border-transparent py-1 px-2 hover:text-white focus:text-white block rounded" data-width="1200px"><i class="fa fa-fw fa-2x fa-desktop opacity-50"></i> <b class="block font-normal">lg</b></a></li>
+      <li class="mx-3"><a href="#" class="border border-transparent py-1 px-2 hover:text-white focus:text-white block rounded" data-width="768px"><i class="fa fa-fw fa-2x fa-tablet opacity-50"></i> <b class="block font-normal">md</b></a></li>
+      <li class="mx-3"><a href="#" class="border border-transparent py-1 px-2 hover:text-white focus:text-white block rounded" data-width="480px"><i class="fa fa-fw fa-2x fa-mobile opacity-50"></i> <b class="block font-normal">sm</b></a></li>
     </ul>
-    <div class="ui-panels panel-container mx-auto py-16 pb-8 w-full flex flex-wrap justify-center">
+    <div class="ui-panels panel-container mx-auto pb-16 pb-8 w-full flex flex-wrap justify-center">
+      <div class="ui-panels-width mt-2 mb-16 text-gray-700 flex w-full items-center opacity-50">
+        <i class="ml-2 px-px h-6 bg-gray-700 rounded-full"></i>
+        <div class="mx-2 py-px bg-gray-700 flex-1 rounded-full"></div>
+        <b></b>
+        <div class="mx-2 py-px bg-gray-700 flex-1 rounded-full"></div>
+        <i class="mr-2 px-px h-6 bg-gray-700 rounded-full"></i>
+      </div>
       <div v-for="(value, index) in panels" class="panel-item mx-4 mb-8 p-4 pb-px w-full max-w-xs bg-gray-800 rounded-sm shadow-xl">
         <div v-if="value.heading != ''" v-html="value.heading" class="panel-heading text-2xl font-bold"></div>
         <div v-if="value.image != ''" class="panel-image opacity-50"><p><a href="#"><img :src="'holder.js/'+ value.image +'?text='+ value.image_text +'&outline=yes&auto=yes&bg=#000&fg=#FFF'" :alt="value.image_text" /></a></p></div>
@@ -79,12 +86,23 @@
   <script>
 
     $(function(){
+
+      // faux device preview
       $('.nav-devices a').on('click', function(e){
         e.preventDefault();
         $('.nav-devices a').removeClass('bg-purple-600 text-white');
         $(this).addClass('bg-purple-600 text-white');
         $('.ui-panels').css('width', $(this).data('width'));
       });
+
+      // actual container width
+      viewport();
+      function viewport(){
+        setInterval(function(){
+          $('.ui-panels-width b').text($('.ui-panels').width() + 'px');
+        }, 25);
+      }
+
     });
 
     // data
