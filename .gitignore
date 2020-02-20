@@ -86,3 +86,10 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+# Extras
+.DS_Store
+node_modules
+dist/
+asset-manifest.json
+package-lock.json
